@@ -4,6 +4,5 @@ public class Shape2D extends Shape
 {
     public Shape2D()
     {
-        property = new ArrayList();
     }
 }
