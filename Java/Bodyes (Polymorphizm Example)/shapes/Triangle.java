@@ -4,6 +4,4 @@ public class Triangle extends Shape2D
     {
         property.add("angular");
     }
-
-
 }
