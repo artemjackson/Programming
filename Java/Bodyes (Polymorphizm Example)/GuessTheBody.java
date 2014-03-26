@@ -1,3 +1,6 @@
+import shapes.*;
+import materials.*;
+
 public class GuessTheBody {
     public static void main(String args[])
     {
