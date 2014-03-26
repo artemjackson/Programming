@@ -1,3 +1,6 @@
+import shapes.*;
+import materials.*;
+
 public class Body{
     public void setMaterial(Material newMaterial){
         material = newMaterial;
