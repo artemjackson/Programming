@@ -1,9 +1,11 @@
 package materials;
+
 import java.util.ArrayList;
+import java.lang.String;
 
 public class Material{	
 	public Material(){
-		property = new ArrayList();
+		property = new ArrayList<String>();
 	}	
 	
 	public void addProperty(String newProperty){
@@ -25,8 +27,14 @@ public class Material{
 		return property.indexOf(desiredProperty);
 	}
 	
-	protected ArrayList property; 
+	public String[] getProperties()
+    	{
+		String[] output = new String[property.size()];
+		property.toArray(output);
+		return output;
+	}
 
+	protected ArrayList property; 
 }
 
 

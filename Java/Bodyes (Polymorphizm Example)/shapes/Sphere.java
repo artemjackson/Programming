@@ -1,3 +1,5 @@
+package shapes;
+
 public class Sphere extends Shape3D
 {
     public Sphere()
@@ -6,3 +8,4 @@ public class Sphere extends Shape3D
         property.add("round");
     }
 }
+
