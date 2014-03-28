@@ -2,10 +2,7 @@ package shapes;
 
 import java.util.ArrayList;
 import java.lang.String;
-<<<<<<< HEAD
-=======
 import java.util.Random;
->>>>>>> b196d9c921a008beac46910e0c7826bb991d6754
 
 public class Shape {
 
@@ -44,26 +41,5 @@ public class Shape {
 		return output;
     	}
 
-<<<<<<< HEAD
-	
-=======
-    public Shape getRandomShape(){
-        Random rand = new Random();
-
-        int i=rand.nextInt();
-
-        Shape shape = new Sphere();
-        switch(i%2){
-            case 0 :
-                shape = new Sphere();
-                break;
-            case 1:
-                shape = new Triangle();
-                break;
-        }
-        return shape;
-    }
-
->>>>>>> b196d9c921a008beac46910e0c7826bb991d6754
     	protected ArrayList property;
 }

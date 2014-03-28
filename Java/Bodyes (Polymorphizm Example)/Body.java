@@ -1,12 +1,10 @@
 import shapes.*;
 import materials.*;
 
-<<<<<<< HEAD
-=======
-import java.util.Scanner;
+import java.util.Random;
 
->>>>>>> b196d9c921a008beac46910e0c7826bb991d6754
 public class Body{
+	
 	public void setMaterial(Material newMaterial){
 	        material = newMaterial;
 	}
@@ -14,7 +12,46 @@ public class Body{
 	public void setShape(Shape newShape){
 	        shape = newShape;
 	}
-<<<<<<< HEAD
+
+	public void setRandomMaterial(){
+	        Random rand = new Random();
+		
+       		int i = rand.nextInt();
+        	switch(i%2){
+        	    	case 0:
+        	        	material = new Metall(); break;
+        	    	case 1:
+        	        	material = new Wood(); break;
+        	}
+    	}
+	
+	public void setRandomShape(){
+	        Random rand = new Random();
+       		int i = rand.nextInt();
+
+        	switch(i%2){
+        	    	case 0:
+        	        	shape = new Sphere(); break;
+        	    	case 1:
+        	        	shape = new Triangle(); break;
+        	}
+	}
+	public String getMaterial(){
+		return material.getClass().getSimpleName();	
+	}
+
+	public String getShape(){
+		return shape.getClass().getSimpleName();
+	}
+
+	public	String[] getMaterialProperties(){
+		return material.getProperties();	
+	}
+
+	public String[] getShapeProperties(){
+		return shape.getProperties();	
+	}
+	
 
 	public void printAllProperties() {
         	System.out.println("Material properties: ");
@@ -30,54 +67,4 @@ public class Body{
 
     	private Material material;
     	private Shape shape;
-=======
-
-	public void printAllProperties() {
-        	System.out.println("Material properties: ");
-		String[] materialProperties = this.material.getProperties();
-		for(Object o : materialProperties)
-			System.out.println (o);
-        	
-		System.out.println("Shape properties: " );
-		String[] shapeProperties = this.shape.getProperties();
-		for(Object o : shapeProperties)
-			System.out.println (o);
-    }
-
-    public int play() {
-        int counter=0;
-        Scanner scanner=new Scanner(System.in);
-        String[]  allProperties = {"brilliant","heavy", "rough","light","angular","smooth","round"};
-
-        String[] materialProperties = this.material.getProperties();
-        String[] shapeProperties = this.shape.getProperties();
-
-        while(counter<materialProperties.length+shapeProperties.length)
-        {
-
-            System.out.println("You can ask questions:");
-            for(int i=0; i<allProperties.length; ++i)
-                System.out.println(i+1 + ". " + allProperties[i]);
-
-            String word = scanner.nextLine();
-
-            for(int i=0; i<materialProperties.length; ++i){
-                if (materialProperties[i].equals(word))
-                    System.out.println("It has property: " + word);
-            }
-
-            for(int i=0; i<shapeProperties.length; ++i){
-                if (shapeProperties[i].equals(word))
-                    System.out.println("It has property: " + word);
-
-            }
-            ++counter;
-        }
-
-        return 0;
-    }
-
-    private Material material;
-    private Shape shape;
->>>>>>> b196d9c921a008beac46910e0c7826bb991d6754
 }
