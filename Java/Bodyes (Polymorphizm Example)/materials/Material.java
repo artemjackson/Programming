@@ -1,9 +1,13 @@
 package materials;
-import java.util.ArrayList;
 
-public class Material{	
+import java.util.ArrayList;
+import java.lang.String;
+import java.util.Random;
+
+
+public class Material{
 	public Material(){
-		property = new ArrayList();
+		property = new ArrayList<String>();
 	}	
 	
 	public void addProperty(String newProperty){
@@ -25,8 +29,31 @@ public class Material{
 		return property.indexOf(desiredProperty);
 	}
 	
-	protected ArrayList property; 
+	public String[] getProperties()
+    	{
+		String[] output = new String[property.size()];
+		property.toArray(output);
+		return output;
+	}
 
+    public Material getRandomParameter(){
+        Random rand = new Random();
+
+        int i=1+rand.nextInt();
+
+        Material material = new Material();
+        switch(i%2){
+            case 0 :
+                material = new Metall();
+                break;
+            case 1:
+                material = new Wood();
+                break;
+        }
+        return material;
+    }
+
+	protected ArrayList property; 
 }
 
 

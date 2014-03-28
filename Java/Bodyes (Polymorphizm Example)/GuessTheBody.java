@@ -1,16 +1,21 @@
+import shapes.*;
+import materials.*;
+import java.util.Scanner;
+
 public class GuessTheBody {
+
     public static void main(String args[])
     {
-        Material metall = new Metall();
-        metall.addProperty("expensive");
-
-        Shape sphere=new Sphere();
-        sphere.addProperty("rolls well");
+        Material material = new Material();
+        Shape shape=new Shape();
 
         Body body = new Body();
-        body.setMaterial(metall);
-        body.setShape(sphere);
+        body.setMaterial(material.getRandomParameter());
+        body.setShape(shape.getRandomShape());
 
         body.printAllProperties();
+        body.play();
+
+
     }
 }
