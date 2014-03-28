@@ -44,25 +44,25 @@ public class GuessTheBody {
 			allBodyProperties[materialProperties.length + i] = shapeProperties[i];
 		}
 		
-		String word = "";
+		String answ = "";
 		boolean win = false;
 		
 		while( !win ){
-			word = scanner.nextLine();
-			if( word.equals("a") ){
-        			while( isNumber(word) || word.equals("a") )
+			answ = scanner.nextLine();
+			if( answ.equals("a") ){
+        			while( isNumber(answ) || answ.equals("a") )
         			{
 
           				System.out.println("You can ask: ");
           				for(int i = 0; i < allPossibleProperties.length; ++i)
            				System.out.println(i+1 + ". Is it " + allPossibleProperties[i] + "?");
 
-					word = scanner.nextLine();
+					answ = scanner.nextLine();
 					
-					if( isNumber(word) ){
+					if( isNumber(answ) ){
 						int checker = 0;
            	 				for(int i = 0; i < allBodyProperties.length; ++i){
-           	 					if( allBodyProperties[i].equals( allPossibleProperties[ Integer.parseInt(word) - 1 ] ) ){
+           	 					if( allBodyProperties[i].equals( allPossibleProperties[ Integer.parseInt(answ) - 1 ] ) ){
 								System.out.println("It has this property!"); 
 								checker++;
 							}
@@ -78,23 +78,23 @@ public class GuessTheBody {
  	      			}
 			}
 			
-			if( word.equals("w") ){ 
+			if( answ.equals("w") ){ 
 				System.out.println("Enter materual:");
-				word = scanner.nextLine();
-
-				if( word.equals( body.getMaterial() ) ){
-					System.out.println("Enter shape:");	
-					word = scanner.nextLine();
-					if( word.equals( body.getShape() ) ){
+				String word1 = scanner.nextLine();
+				System.out.println("Enter shape:");
+				String word2 = scanner.nextLine();
+					
+				if( word1.equals( body.getMaterial() ) || word2.equals( body.getShape() ) ){
+					if( word1.equals( body.getMaterial() ) && word2.equals( body.getShape() ) ){
 						win = true;
 						System.out.println("You are abslolutly right!");
-					}
-				}else System.out.println("So close..");
-				
+					} else System.out.println("So close..");						
+				}else System.out.println("None");	
 			}
 		}
 		
-		System.out.println("Congratulations! You won with " + counter + " hints!");
+		if(win)
+			System.out.println("Congratulations! You won with " + counter + " hints!");
 	}
 
 	private static boolean isNumber(String word){

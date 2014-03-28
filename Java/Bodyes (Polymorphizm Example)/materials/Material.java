@@ -35,7 +35,7 @@ public class Material{
 		return output;
 	}
 
-	protected ArrayList property; 
+	protected ArrayList<String> property; 
 }
 
 

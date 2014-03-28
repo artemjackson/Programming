@@ -41,5 +41,5 @@ public class Shape {
 		return output;
     	}
 
-    	protected ArrayList property;
+    	protected ArrayList<String> property;
 }
