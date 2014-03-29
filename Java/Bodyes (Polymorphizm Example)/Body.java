@@ -19,9 +19,9 @@ public class Body{
 
         	switch(i){
         	    	case 0:
-        	        	System.out.println("Metall"); material = new Metall(); break;
+        	        	material = new Metall(); break;
         	    	case 1:
-        	        	System.out.println("Wood");  material = new Wood(); break;
+        	        	material = new Wood(); break;
         	}
     	}
 	
@@ -31,9 +31,9 @@ public class Body{
 
         	switch(i){
         	    	case 0:
-        	        	System.out.println("Sphere");  shape = new Sphere(); break;
+        	        	shape = new Sphere(); break;
         	    	case 1:
-        	        	System.out.println("Triangle");  shape = new Triangle(); break;
+        	        	shape = new Triangle(); break;
         	}
 	}
 	public String getMaterial(){

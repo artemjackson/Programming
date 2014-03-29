@@ -2,7 +2,7 @@
 *.cbp*
 *.depend
 *.layout*
-*~
+*[~$]
 */obj
 */bin
 *.save
@@ -18,3 +18,4 @@
 *.class
 *.user
 *.filters
+
