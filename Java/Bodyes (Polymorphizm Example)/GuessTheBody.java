@@ -43,7 +43,7 @@ public class GuessTheBody {
 		{
 			allBodyProperties[materialProperties.length + i] = shapeProperties[i];
 		}		
-
+		
 		String answ = "";
 		boolean win = false;
 		
@@ -90,6 +90,20 @@ public class GuessTheBody {
 					} else System.out.println("So close..");						
 				}else System.out.println("None");	
 			}
+
+			/** Yeh, it's cheat-code :) */
+			if(answ.equals("Hint")){
+				System.out.println("It's also has properties:");
+				for(Object e: allBodyProperties)
+					System.out.println(e);
+			}
+
+			/** Yghm, it's cheat too. More exactly it's mega-chit ;) */			
+			if(answ.equals("MegaHint")){
+				System.out.println("It's:");
+				System.out.println(body.getMaterial() + " " + " " + body.getShape());
+			}
+				
 		}
 		
 		if(win)

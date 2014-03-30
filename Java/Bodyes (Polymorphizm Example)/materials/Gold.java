@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.ArrayList;
 
 public class Gold extends Material{
+	
 	public Gold(){
 		property.add("briliant");
 		property.add("expensive");
@@ -22,7 +23,7 @@ public class Gold extends Material{
 			temp.add(property.get(0));
 
 		i = rand.nextInt(10);
-		if(i > 8)		
+		if(i > 7)		
 			temp.add(property.get(1));
 		
 		i = rand.nextInt(10);

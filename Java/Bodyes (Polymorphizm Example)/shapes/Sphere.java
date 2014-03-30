@@ -24,12 +24,12 @@ public class Sphere extends Shape3D
 			temp.add(property.get(0));
 
 		i = rand.nextInt(10);
-		if(i > 3)		
+		if(i > 5)		
 			temp.add(property.get(1));
 		
 		i = rand.nextInt(10);
-		if(i > 5)		
-			temp.add(property.get(1));
+		if(i > 3)		
+			temp.add(property.get(2));
 
 		if(temp.size() == 0){
 			i = rand.nextInt(3);

@@ -15,25 +15,29 @@ public class Body{
 
 	public void setRandomMaterial(){
 	        Random rand = new Random();
-       		int i = rand.nextInt(2);
+       		int i = rand.nextInt(3);
 
         	switch(i){
         	    	case 0:
         	        	material = new Metall(); break;
         	    	case 1:
         	        	material = new Wood(); break;
+			case 2:
+        	        	material = new Gold(); break;
         	}
     	}
 	
 	public void setRandomShape(){
 	        Random rand = new Random();
-       		int i = rand.nextInt(2);
+       		int i = rand.nextInt(3);
 
         	switch(i){
         	    	case 0:
         	        	shape = new Sphere(); break;
         	    	case 1:
         	        	shape = new Triangle(); break;
+			case 2:
+   	     	        	shape = new Tetraider(); break;
         	}
 	}
 	public String getMaterial(){

@@ -19,11 +19,11 @@ public class Triangle extends Shape2D
 		Random rand = new Random();
        		
 		int i = rand.nextInt(10);				
-		if(i > 7)
+		if(i > 2)
 			temp.add(property.get(0));
 
 		i = rand.nextInt(10);
-		if(i > 3)		
+		if(i > 7)		
 			temp.add(property.get(1));
 
 		if(temp.size() == 0){
