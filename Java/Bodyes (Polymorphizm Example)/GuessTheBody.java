@@ -26,7 +26,8 @@ public class GuessTheBody {
 	}
 
 	private static void play(Body body) {
-        	int counter = 0;
+        	int hintCounter = 0;
+		int wrongAnsw = 0;
 		String[]  allPossibleProperties = {"brilliant",  "primitive", "heavy", "rough", "light", "round", "empty",  "angular", "smooth", "expensive",  "volumetric"};
         	
 		Scanner scanner = new Scanner(System.in);
@@ -72,7 +73,7 @@ public class GuessTheBody {
 						if(checker == 0)
 							System.out.println("I think no..");
             				
-						++counter;
+						++hintCounter;
 					}
  	      			}
 			}
@@ -87,8 +88,14 @@ public class GuessTheBody {
 					if( word1.equals( body.getMaterial() ) && word2.equals( body.getShape() ) ){
 						win = true;
 						System.out.println("You are abslolutly right!");
-					} else System.out.println("So close..");						
-				}else System.out.println("None");	
+					} else {
+							System.out.println("So close.."); 
+							++wrongAnsw;
+						}						
+				}else {
+						System.out.println("None");
+						++wrongAnsw;
+					}
 			}
 
 			/** Yeh, it's cheat-code :) */
@@ -107,7 +114,7 @@ public class GuessTheBody {
 		}
 		
 		if(win)
-			System.out.println("Congratulations! You won with " + counter + " hints!");
+			System.out.println("Congratulations! You won with " + hintCounter + " hints! And " + wrongAnsw + " wrong answers!");
 	}
 
 	private static boolean isNumber(String word){
