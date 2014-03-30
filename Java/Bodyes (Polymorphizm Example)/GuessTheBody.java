@@ -27,14 +27,14 @@ public class GuessTheBody {
 
 	private static void play(Body body) {
         	int counter = 0;
-		String[]  allPossibleProperties = {"brilliant", "heavy", "rough", "light", "angular", "smooth", "round"};
+		String[]  allPossibleProperties = {"brilliant",  "primitive", "heavy", "rough", "light", "round", "empty",  "angular", "smooth", "expensive",  "volumetric"};
         	
 		Scanner scanner = new Scanner(System.in);
         	
         	String[] materialProperties = body.getMaterialProperties();
         	String[] shapeProperties = body.getShapeProperties();
 		String[] allBodyProperties = new String[materialProperties.length + shapeProperties.length];
-
+		
 		for(int i = 0; i < materialProperties.length; ++i)
 		{
 			allBodyProperties[i] = materialProperties[i];
@@ -42,8 +42,8 @@ public class GuessTheBody {
 		for(int i = 0; i < shapeProperties.length; ++i)
 		{
 			allBodyProperties[materialProperties.length + i] = shapeProperties[i];
-		}
-		
+		}		
+
 		String answ = "";
 		boolean win = false;
 		
@@ -52,7 +52,6 @@ public class GuessTheBody {
 			if( answ.equals("a") ){
         			while( isNumber(answ) || answ.equals("a") )
         			{
-
           				System.out.println("You can ask: ");
           				for(int i = 0; i < allPossibleProperties.length; ++i)
            				System.out.println(i+1 + ". Is it " + allPossibleProperties[i] + "?");
@@ -63,7 +62,7 @@ public class GuessTheBody {
 						int checker = 0;
            	 				for(int i = 0; i < allBodyProperties.length; ++i){
            	 					if( allBodyProperties[i].equals( allPossibleProperties[ Integer.parseInt(answ) - 1 ] ) ){
-								System.out.println("It has this property!"); 
+								System.out.println("May be yes..."); 
 								checker++;
 							}
 	 
@@ -71,14 +70,14 @@ public class GuessTheBody {
 						}
 
 						if(checker == 0)
-							System.out.println("It hasn't this property!");
+							System.out.println("I think no..");
             				
 						++counter;
 					}
  	      			}
 			}
 			
-			if( answ.equals("w") ){ 
+			if( answ.equals("w") ){
 				System.out.println("Enter materual:");
 				String word1 = scanner.nextLine();
 				System.out.println("Enter shape:");

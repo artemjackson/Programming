@@ -1,8 +1,6 @@
 package materials;
 
 import java.util.ArrayList;
-import java.lang.String;
-import java.util.Random;
 
 public class Material{
 	public Material(){

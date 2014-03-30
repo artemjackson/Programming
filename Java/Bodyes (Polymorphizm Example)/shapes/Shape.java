@@ -1,8 +1,6 @@
 package shapes;
 
 import java.util.ArrayList;
-import java.lang.String;
-import java.util.Random;
 
 public class Shape {
 
