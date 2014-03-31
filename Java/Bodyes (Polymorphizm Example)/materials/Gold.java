@@ -28,7 +28,7 @@ public class Gold extends Material{
 		
 		i = rand.nextInt(10);
 		if(i > 5)		
-			temp.add(property.get(1));
+			temp.add(property.get(2));
 
 		if(temp.size() == 0){
 			i = rand.nextInt(3);
