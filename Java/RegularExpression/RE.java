@@ -57,7 +57,7 @@ public class RE {
 	 *	Checking if this character is russian vowel
 	 */
 	private static boolean isVowel(String s){
-		Pattern p = Pattern.compile("[А-Яа-я]");  
+		Pattern p = Pattern.compile("[аеёиоуыэюяAЕЁИОУЫЭЮЯ]");  
         	Matcher m = p.matcher(s);  
         	return m.matches(); 
 	}
