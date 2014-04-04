@@ -23,9 +23,9 @@ public class RE {
 					map.put(args[i], proportion);			
 				}				
 			}
-			System.out.print("Words in order of portion of vawel in it:\n");
+			System.out.print("Words in order of portion of vowels in it:\n");
 			print(map);
-		}
+		
 		else	
 			System.out.println("Error. No arguments are inputеed\n");
 	}
