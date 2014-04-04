@@ -46,7 +46,7 @@ public class RE {
 		int vowels = 0;
 		
 		for(int i = 0; i < str.length(); ++i)
-			if( isVowel(str.charAt(i)))
+			if( isVowel( Character.toString(str.charAt(i)) ))
 				++vowels;
 		
 		Double proportion = (double)vowels/(double)str.length();
@@ -56,20 +56,10 @@ public class RE {
 	/**
 	 *	Checking if this character is russian vowel
 	 */
-	private static boolean isVowel(char ch){
-		switch (ch){
-			case 'а': return true;
-			case 'у': return true;
-			case 'о': return true;
-			case 'ы': return true;
-			case 'и': return true;
-			case 'э': return true;
-			case 'я': return true;
-			case 'ю': return true;
-			case 'ё': return true;
-			case 'е': return true;		
-		}
-		return false;
+	private static boolean isVowel(String s){
+		Pattern p = Pattern.compile("[А-Яа-я]");  
+        	Matcher m = p.matcher(s);  
+        	return m.matches(); 
 	}
 	
 	/**
