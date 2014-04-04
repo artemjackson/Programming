@@ -25,17 +25,23 @@ public class RE {
 			}
 			System.out.print("Words in order of portion of vowels in it:\n");
 			print(map);
-		
+		}
 		else	
 			System.out.println("Error. No arguments are inputеed\n");
 	}
-
+	
+	/**
+	 *	Checking if there are only russian vawels in word
+	 */
 	private static boolean check(String str){
 		Pattern p = Pattern.compile("[А-Яа-я]{1,}");  
         	Matcher m = p.matcher(str);  
         	return m.matches(); 
 	}
-
+	
+	/**
+	 *	Counting portion of vawels in whole word 
+	 */
 	private static Double countVowelsProportion(String str){
 		int vowels = 0;
 		
@@ -46,7 +52,10 @@ public class RE {
 		Double proportion = (double)vowels/(double)str.length();
 		return proportion;
 	}
-
+	
+	/**
+	 *	Checking if this character is russian vowel
+	 */
 	private static boolean isVowel(char ch){
 		switch (ch){
 			case 'а': return true;
@@ -62,7 +71,10 @@ public class RE {
 		}
 		return false;
 	}
-
+	
+	/**
+	 *	Outputing to console words in order of increasing of vowels portion in word
+	 */
 	private static void print(Map map){
 		List<Map.Entry> list = new ArrayList<Map.Entry>(map.entrySet());
 		Collections.sort(list, new Comparator() {
@@ -75,5 +87,10 @@ public class RE {
 
 		for (Map.Entry e : list)
         		System.out.println(e.getKey());
+			/* If you want to check correctness of 
+			 * this output please, uncomment follow line
+			 * It will show you a word and it's vowel portion
+			 */
+			// System.out.println(e.getKey() + " " + e.getValue());
 	}
 }
