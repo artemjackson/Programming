@@ -26,9 +26,8 @@ in
 }
 body
 {
-    if(args.length > 2)
-        foreach(i; 1..args.length)
-            spawn(&f, to!int(args[i]));
+    foreach(i; 1..args.length)
+       spawn(&f, to!int(args[i]));
 
     return 0;
 }
